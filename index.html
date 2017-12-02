@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Week 4 Game</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	
+	<div class = "container">
+		<div class = "headline">Crystals Collector!</div>
+
+		<br>
+		<br>
+		
+			<p>You will be given a random number at the start of the game.</p>
+			<p>There are four crystals below. By clicking on a crystal you will add aspecific amount of points to your total score.</p>
+			<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+			<p>The value of each crystal is hidden from you until you click on it.</p>
+			<p>Each time when the game starts, the game will change the values of each crystal.</p>
+
+		<div id = "randomnumber"></div>
+		<h1>Your total score is:</h1>
+		<div id = "generatedScore"></div>
+
+
+		<section class = "crystals">
+			<ul>
+				<li><img id = "bluecrystal" src= "assets/images/blue_crystal.png"></li>
+				<li><img id = "greencrystal" src="assets/images/Emerald.png"></li>
+				<li><img id = "redcrystal" src="assets/images/red.png"></li>
+				<li><img id = "yellowcrystal" src="assets/images/yellow.png"></li>
+			</ul>
+		</section>
+		<div class = "win-lose">
+				<div id = "wins">Wins: </div>
+				<div id = "losses">Losses: </div>
+			</div>
+		</div>
+
+	</div>
+		
+</div>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+
+</body>
+</html>
