@@ -9,88 +9,107 @@
 // new random number is generated every time player wins or loses
   // variables var randomNumber = Math.floor(Math.random() * 50 + 1);
 
-var randomnumber = 0
-var losses = 0
-var wins = 0
+// resets document
+$(document).ready(function() {
+// declare and initialize random number from 19 - 120
+var randomnumber = Math.floor(Math.random() * 101 + 19);
+// append randomnumber to randomNumber id
+$("#randomnumber").text(randomnumber);
+
+//  random crystal number between 1 -12
 var bluecrystal = Math.floor(Math.random() * 11 + 1);
 var greencrystal = Math.floor(Math.random() * 11 + 1);
 var yellowcrystal = Math.floor(Math.random() * 11 + 1);
 var redcrystal = Math.floor(Math.random() * 11 + 1);
-var restartgame = 0
-var generatedScore = 0
-var totalscore = 0
+
+var generatedScore = 0;
+var losses = 0;
+var wins = 0;
 
 
-function crystalCollector (result) {
 
-// declare and initialize random number
-var randomnumber = Math.floor(Math.random() * 70) + 50;
-
-$("#randomnumber").html(randomnumber);
+// variables for the wins and losses
+$("#wins").text(wins);
+$("#losses").text(losses);
+// adds wins to win-loss
+function win(){
+	alert("You won!");
+	wins++
+	$("#wins").text(wins);
+	reset();
 
 }
+
+// adds losses to win-loss
+function lose(){
+	alert("You lost!");
+	losses++
+	$("#losses").text(losses);
+	reset();
+	
+}
+
+// resets game
+function reset () {
+// resetss random number
+	randomnumber = Math.floor(Math.random() * 101 + 19);
+	$("#randomnumber").text(randomnumber);
+// resets random numbers of each crystal
+	bluecrystal = Math.floor(Math.random() * 11 + 1);
+	greencrystal = Math.floor(Math.random() * 11 + 1);
+	yellowcrystal = Math.floor(Math.random() * 11 + 1);
+	redcrystal = Math.floor(Math.random() * 11 + 1)
+	generatedScore = 0
+	$("#generatedScore").text(generatedScore);
+}
+
 // value from each crystal
 
 $("#bluecrystal").on("click", function() {
-generatedScore = generatedScore + bluecrystal
+generatedScore = generatedScore + bluecrystal;
 $("#generatedScore").text(generatedScore);
 console.log(bluecrystal)
-
+totalscore();
 })
 
 $("#greencrystal").on("click", function() {
-// $("#totalscore").text(greencrystal);
-generatedScore = generatedScore + greencrystal
-$("#generatedScore").text(generatedScore)
-console.log(greencrystal)
-
+generatedScore = generatedScore + greencrystal;
+$("#generatedScore").text(generatedScore);
+console.log(greencrystal);
+totalscore();
 })
 
 $("#redcrystal").on("click", function() {
-// $("#totalscore").text(greencrystal);
-generatedScore = generatedScore + redcrystal
-$("#generatedScore").text(generatedScore)
-console.log(redcrystal)
-
+generatedScore = generatedScore + redcrystal;
+$("#generatedScore").text(generatedScore);
+console.log(redcrystal);
+totalscore();
 })
 
 $("#yellowcrystal").on("click", function() {
-// $("#totalscore").text(greencrystal);
-generatedScore = generatedScore + yellowcrystal
+generatedScore = generatedScore + yellowcrystal;
 $("#generatedScore").text(generatedScore);
-push("generatedScore");
-console.log(yellowcrystal)
-
+console.log(yellowcrystal);
+totalscore();
 })
+// see if totalscore equals randomnumber
 
-// see if totalscore equals randomnumber or is more than randomnumber
-
-	if(totalscore === randomnumber) {
-	// $("#win-lose").text("<h2>You Won!</h2>");
-    $("#wins").text(totalscore[0]);
-	this.wins++
-	console.log(wins);
-	$("#wins").text(wins)
-// reset game
-	restartgame = randomnumber [0];
-	$("randomnumber").text(randomnumber)
-	totalscore = 0;
-	console.log(randomnumber);
-	
-
-}
-
-else if(totalscore > randomnumber) {
-	losses--;
-	$("#losses").text(totalscore + losses);
-    
+function totalscore(){
+	if(randomnumber === generatedScore) {
+		win();
+		
 		}
+	else if (randomnumber < generatedScore) {
+		lose();
+		
+		}
+
+
+
 	
+	};
+});
 
-
-
-
-crystalCollector()
 
 
 

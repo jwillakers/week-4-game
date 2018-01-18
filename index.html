@@ -11,8 +11,8 @@
 </head>
 <body>
 	
-	<div class = "container">
-		<div class = "headline">Crystals Collector!</div>
+<div class = "container">
+		<div class = "headline">Crystal Collector!</div>
 
 		<br>
 		<br>
@@ -22,11 +22,17 @@
 			<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
 			<p>The value of each crystal is hidden from you until you click on it.</p>
 			<p>Each time when the game starts, the game will change the values of each crystal.</p>
-
-		<div id = "randomnumber"></div>
-		<h1>Your total score is:</h1>
-		<div id = "generatedScore"></div>
-
+		
+		<div class = "targetNumber">Target Score
+			<span id = "randomnumber"></span>
+		</div>
+			
+		<div class = "userTotal">
+			<h2>Your score is: </h2>
+				<span id = "generatedScore"></span>
+		</div>
+			<br>
+			<br>
 
 		<section class = "crystals">
 			<ul>
@@ -36,13 +42,14 @@
 				<li><img id = "yellowcrystal" src="assets/images/yellow.png"></li>
 			</ul>
 		</section>
-		<div class = "win-lose">
-				<div id = "wins">Wins: </div>
-				<div id = "losses">Losses: </div>
-			</div>
+		<div class="win-lose">
+		<h2>Wins:
+			<span id= "wins"></span>
+			<br>
+			Losses: 
+			<span id= "losses"></span>
+		</h2>
 		</div>
-
-	</div>
 		
 </div>
 
